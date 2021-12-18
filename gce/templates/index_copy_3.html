@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="kala.js"></script>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+<df-messenger
+    intent="WELCOME"
+    chat-title="test_bot"
+    agent-id="ada052ee-cba3-4ecc-9188-4bdb96baa52e"
+    language-code="en"
+
+    dfMessenger.addEventListener('df-list-element-clicked', function (event) {
+        // Handle event
+        console.log("df-list-element-clicked:" + JSON.stringify(event));
+        
+    });
+
+    const dfMessenger = document.querySelector('df-messenger');
+    dfMessenger.addEventListener('event-type', function (event) {
+        console.log("df-list-element-clicked:" + JSON.stringify(event));
+    });
+
+    const dfMessenger = document.querySelector('df-messenger')
+         dfMessenger.addEventListener('df-response-received', function (event) {
+             console.log(event)
+             // how to send the new parameters?
+         })
+
+
+></df-messenger>
+
+
+<df-messenger
+
+    const dfMessenger = document.querySelector('df-messenger');
+    dfMessenger.addEventListener('event-type', function (event) {
+        console.log("df-list-element-clicked:" + JSON.stringify(event));
+    });
+
+    const dfMessenger = document.querySelector('df-messenger')
+         dfMessenger.addEventListener('df-response-received', function (event) {
+             console.log(event)
+             // how to send the new parameters?
+         })
+
+
+></df-messenger>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bot</title>
+
+    <title>Zenben</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+
+</head>
+<body>
+   <h1>Look at the right lower corner!</h1>
+
+   <button id="btn">Click here!</button>
+    <p id="funcOutput"></p>
+    <p id="handleEvtOutput"></p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo">
+
+    <script>
+    document.getElementById("myBtn").addEventListener("click", myFunction);
+
+    function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+    }
+    </script>
+
+
+    <script>
+        const dfMessenger = document.querySelector('df-messenger')
+        dfMessenger.addEventListener('df-response-received', function (event) {
+            console.log(event)
+            document.write("here<br>");
+            document.write(JSON.stringify(event.detail))
+            // document.write(event) // How can i display it on the website?
+
+         })
+
+        // dfMessenger.renderCustomText('Custom text');
+
+        // element: {
+        //    title: string,
+        //    subtitle: string,
+        //    image: {
+        //        src: {rawUrl: string}
+        //    },
+        // text: string
+        // }
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

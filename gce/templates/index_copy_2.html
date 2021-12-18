@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+    intent="WELCOME"
+    chat-title="test_bot"
+    agent-id="ada052ee-cba3-4ecc-9188-4bdb96baa52e"
+    language-code="en"
+
+    const dfMessenger = document.querySelector('df-messenger');
+    dfMessenger.addEventListener('df-response-received', function (event) {
+    console.log(event);
+    if (event.detail.response) {
+        data = event.detail.response;
+        console.log(data);
+        //now do something with the data JSON object
+        }
+    });
+
+></df-messenger>
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bot</title>
+
+    <title>Student helpdesk - Demo</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+
+</head>
+<body>
+   <h1>Look at the right lower corner!</h1>
+</body>
+</html>
