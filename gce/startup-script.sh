@@ -30,20 +30,23 @@ useradd -m -d /home/pythonapp pythonapp
 
 # Fetch source code
 export HOME=/root
-git clone https://github.com/GoogleCloudPlatform/getting-started-python.git /opt/app
+git clone https://github.com/Loowi/gce.git /opt/app4
 
 # Python environment setup
-virtualenv -p python3 /opt/app/gce/env
-source /opt/app/gce/env/bin/activate
-/opt/app/gce/env/bin/pip install -r /opt/app/gce/requirements.txt
+virtualenv -p python3 /opt/app4/gce/env
+source /opt/app4/gce/env/bin/activate
+/opt/app4/gce/env/bin/pip install -r /opt/app4/gce/requirements.txt
 
 # Set ownership to newly created account
-chown -R pythonapp:pythonapp /opt/app
+chown -R pythonapp:pythonapp /opt/app4
 
 # Put supervisor configuration in proper place
-cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
+cp /opt/app4/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
 
 # Start service via supervisorctl
-supervisorctl reread
-supervisorctl update
+sudo service supervisord start
+sudo supervisorctl reload
+
+# supervisorctl reread
+# supervisorctl update
 # [END getting_started_gce_startup_script]
